@@ -1,0 +1,32 @@
+Normally in recursive methods the same methord calls inside the particular method.
+
+Example: Fibonacchi numbers generation
+- A fibonacci number generates by adding the previous two fibonacci numbers together
+-First fibonacci number is - 0
+-Second fibonacci number is - 1
+-By adding these two numbers, we can create the third fibonacci number - 0 + 1 = 1
+-Then by adding second and third fibonacci numbers we can create the forth fibonacci number - 1 + 1 = 2
+-Next by adding third and forth fibonacci numbers we can create fifth fibonacci number - 1 + 2 = 3
+-Then the sixth fibonacci number generates - 2 + 3 = 5
+-Seventh fibonacci number is - 3 + 5 = 8
+
+So we can write the first few numbers in the fibonacci serice as : 0, 1, 1, 2, 3, 5, 8
+
+We can programatically implement the fibonacci series using Recursion
+
+function generate_fibonacci_numbers(fib1, fib2){
+    if(fib1 === 0 && fib2 === 0){
+        fib1 = 0;
+        fib2 = 1;
+    }
+
+    fib3 = fib1 + fib2;
+    fib1 = fib2;
+    fib2 = fib3;
+
+    while (fib3 <= 34){
+        generate_fibonacci_numbers(fib1, fib2);
+    }
+
+    return fib3;
+}

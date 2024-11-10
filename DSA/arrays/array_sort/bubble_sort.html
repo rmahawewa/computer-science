@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Sort</title>
+</head>
+<body>
+
+    <p>Sort the numbers: 256, 14, 89, 74, 502, 9, 45, 230, 789, 3, 8, 258, 654, 965, 65, 96, 1, 11, 111, 210, 100, 1000, 47, 33, 56, 2, 3</p> 
+    <p id="sorted_arr">Sorted array: </p>
+    
+    <script>
+
+        let numbers = [256, 14, 89, 74, 502, 9, 45, 230, 789, 3, 8, 258, 654, 965, 65, 96, 1, 11, 111, 210, 100, 1000, 47, 33, 56, 2, 3];
+
+        function bubble_sort(arr){
+            const length = arr.length;
+
+            for(let i = 0; i < length; i++){
+                for(let j = 0; j < length-i; j++){
+                    if(arr[j] > arr[j+1]){
+                        let temp = arr[j];
+                        arr[j] = arr[j+1];
+                        arr[j+1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+
+        document.querySelector("#sorted_arr").innerHTML += bubble_sort(numbers);
+    </script>
+</body>
+</html>
