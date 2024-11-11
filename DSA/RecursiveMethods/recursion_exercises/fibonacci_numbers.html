@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Fibonacci numbers</h3>
+    <p id="fib1">First fibonacci number: </p>
+    <p id="fib2">Second fibonacci number: </p>
+    <p id="fib3">Third fibonacci number: </p>
+    <p id="fib4">Forth fibonacci number: </p>
+    <p id="fib5">Fifth fibonacci number: </p>
+    <p id="fib10">Tenth fibonacci number: </p>
+    <!-- <p id="fib50">Fiftyeth fibonacci number: </p>
+    <p id="fib75">Seventy fifth fibonacci number: </p>
+    <p id="fib100">Hundredth fibonacci number: </p>
+    <p id="fib110">Hundred and tenth fibonacci number: </p> -->
+
+    <script>
+        function find_fibonacci_number(n){
+            if(n===1 || n===2){
+                return 1;
+            }
+            return (find_fibonacci_number(n-1) + find_fibonacci_number(n-2));
+        }
+
+        document.querySelector("#fib1").innerHTML += find_fibonacci_number(1);
+        document.querySelector("#fib2").innerHTML += find_fibonacci_number(2);
+        document.querySelector("#fib3").innerHTML += find_fibonacci_number(3);
+        document.querySelector("#fib4").innerHTML += find_fibonacci_number(4);
+        document.querySelector("#fib5").innerHTML += find_fibonacci_number(5);
+        document.querySelector("#fib10").innerHTML += find_fibonacci_number(10);
+        // document.querySelector("#fib50").innerHTML += find_fibonacci_number(50);
+        // document.querySelector("#fib75").innerHTML += find_fibonacci_number(75);
+        // document.querySelector("#fib100").innerHTML += find_fibonacci_number(100);
+        // document.querySelector("#fib110").innerHTML += find_fibonacci_number(110);
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>One</h3>
+    <p>Sum the numbers upto the given number</p>
+    <h4>Using a for loop</h4>
+    <div id="for_loop"></div>
+    <h4>Using a recursion</h4>
+    <div id="recursion"></div>
+    <h4>Using arithmatic progression formula</h4>
+    <div id="arithmatic_formula"></div>
+
+    <script>
+        
+        function add_upto_n_with_iteration(n){
+            let sum = 0;
+
+            if(n > 0){
+                    for(let i=1; i<=n; i++){
+                    sum += i;
+                }
+            }
+            
+            return sum;            
+        }
+
+        function add_upto_n_with_recursion(n){
+            if(n === 1){
+                return 1;
+            }
+            return(n + add_upto_n_with_recursion(n-1));
+        }
+
+        function add_upto_n_with_math_formula(n){
+            let formula = (n*(n+1))/2;
+
+            return formula;
+        }
+
+        let n=100;
+        let sum1 = add_upto_n_with_iteration(n);
+        let sum2 = add_upto_n_with_recursion(n);
+        let sum3 = add_upto_n_with_math_formula(n);
+
+        document.querySelector("#for_loop").innerHTML = sum1;
+        document.querySelector("#recursion").innerHTML = sum2;
+        document.querySelector("#arithmatic_formula").innerHTML = sum3;
+    </script>
+</body>
+</html>

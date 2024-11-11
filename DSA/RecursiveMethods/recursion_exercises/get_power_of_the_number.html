@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function find_power(number,power){
+            if(power === 0){
+                return 1
+            }
+            return (number * find_power(number,(power-1)));
+        }
+
+        function find_power_iteratively(number,power){
+            if(power == 0){
+                return 1;
+            }
+
+            let result = 1;
+            if(power > 1){
+                for(let i=0; i<power; i++){
+                    result *= number;
+                }
+            }
+            return result;
+        }
+
+        console.log(find_power(2,3));
+        console.log(find_power(3,4));
+
+        console.log(find_power_iteratively(2,3));
+        console.log(find_power_iteratively(3,4));
+    </script>
+</body>
+</html>

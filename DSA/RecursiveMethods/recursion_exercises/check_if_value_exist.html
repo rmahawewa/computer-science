@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var nestedObject = {
+            data: {
+                info: {
+                    stuff: {
+                        thing: {
+                            moreStuff: {
+                                magicNumber: 44,
+                                something: 'ne'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // function contains(obj, val){
+        //     for(const [key, value] of Object.entries(obj)){
+        //         if(typeof(value) === 'Object'){
+        //             contains(value,val);
+        //         }else if(value === val){
+        //             console.log(value);
+        //             return true;
+        //         }
+        //     }
+        //     return false;
+        // }
+
+        function contains(obj, value){
+            for(var key in obj){
+                if(typeof obj[key] === 'object'){
+                    return contains(obj[key], value);
+                }
+
+                if (obj[key] === value){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        console.log(contains(nestedObject, 44));   
+        console.log(contains(nestedObject, '444'));
+        console.log(contains(nestedObject, 'ne'));
+        console.log(contains(nestedObject, 'nee'));           
+
+    </script>
+</body>
+</html>

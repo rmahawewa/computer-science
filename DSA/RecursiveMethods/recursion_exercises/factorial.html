@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Get the factorial</h3>
+    <p id="f1"><label>Factorial of 1 : </label></p>
+    <p id="f2"><label>Factorial of 2 : </label></p>
+    <p id="f4"><label>Factorial of 4 : </label></p>
+    <p id="f10"><label>Factorial of 10 : </label></p>
+    <p id="f100"><label>Factorial of 100 : </label></p>
+    <p id="f600"><label>Factorial of 600 : </label></p>
+
+    <script>
+        function get_factorial(n){
+            if(n === 1 || n === 0){
+                return 1;
+            }
+
+            return (n * get_factorial(n-1));
+        }
+
+        document.querySelector("#f1").innerHTML += get_factorial(1);
+        document.querySelector("#f2").innerHTML += get_factorial(2);
+        document.querySelector("#f4").innerHTML += get_factorial(4);
+        document.querySelector("#f10").innerHTML += get_factorial(10);
+        document.querySelector("#f100").innerHTML += get_factorial(100);
+        document.querySelector("#f600").innerHTML += get_factorial(600);
+    </script>
+</body>
+</html>
