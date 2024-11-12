@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function get_total_number_of_integers(array){
+            let count = 0;
+            array.forEach(element => {
+                if(Number.isInteger(element)){
+                    count++;
+                }
+                if(Array.isArray(element)){
+                    count += get_total_number_of_integers(element);
+                }
+            });
+            return count;
+        }
+
+        var array = [[[5], 3], 0, 2, ['foo'], [], [4, [5, 6]], 101, 556, [[[[[8]]]]]]; // 7
+
+        console.log(get_total_number_of_integers(array));
+    </script>
+</body>
+</html>

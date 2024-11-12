@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function replicate(times, number){
+            let arr = [];
+            
+            if(times > 0){
+                // arr.push(number);
+                times -= 1;
+                // let newarr = replicate(times, number);
+                // arr.concat(newarr);   
+                // console.log(arr);      
+                return [number].concat(replicate(times,number));       
+            }
+            return arr;
+        }
+
+        console.log(replicate(3, 5)) // [5, 5, 5]
+        console.log(replicate(1, 69)) // [69]
+        console.log(replicate(-2, 6)) // []
+    </script>
+</body>
+</html>

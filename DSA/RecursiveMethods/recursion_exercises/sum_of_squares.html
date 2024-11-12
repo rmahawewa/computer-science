@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function sum_of_squares(array){
+            let sum = 0;
+            array.forEach(element => {
+                if(Number.isInteger(element)){
+                    let value = element * element;
+                    sum += value;
+                }
+                if(Array.isArray(element)){
+                    sum += sum_of_squares(element);
+                }
+            });
+            return sum;
+        }
+
+        var l = [1,2,3];
+        console.log(sum_of_squares(l));
+        l = [[1,2],3];
+        console.log(sum_of_squares(l));
+        l = [[[[[[[[[1]]]]]]]]];
+        console.log(sum_of_squares(l));
+        l = [10,[[10],10],[10]];
+        console.log(sum_of_squares(l));
+
+    </script>
+</body>
+</html>
