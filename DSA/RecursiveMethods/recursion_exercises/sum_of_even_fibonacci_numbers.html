@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function proceed(n,arr){
+            let value = 0;
+
+            if(n==0){
+                value = 0;
+                arr[0] = 0;
+            }
+
+            if(n==1){
+                value = 1;
+                arr[1] = 1;
+            }
+           
+            if(n >= 2){
+                arr[n] = proceed(n-1, arr).value + proceed(n-2, arr).value;
+                value = arr[n];
+                
+            }
+            
+            return {value,arr};
+        }
+
+        function get_sum_of_even_fibonacci(arr){
+            let length = arr.length;
+            let sum = 0;
+
+            for(let i=0; i<arr.length; i++){
+                if(arr[i] % 2 === 0){
+                    sum += arr[i];
+                }
+            }
+            return sum;
+        }
+        let arr = [];
+        console.log("number = 10");
+        console.log("fibonacci number: " + proceed(10,arr).value);
+        console.log("array: " + proceed(10,arr).arr);
+        console.log("even fibonacci number sum: " + get_sum_of_even_fibonacci(proceed(10,arr).arr));
+    </script>
+</body>
+</html>

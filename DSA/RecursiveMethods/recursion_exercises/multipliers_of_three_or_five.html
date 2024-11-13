@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function multipires_of3or5(initial, n){
+            
+            let sum = 0;
+            if(initial % 3 === 0 || initial % 5 === 0){
+                sum += initial;
+            }
+
+            if(initial < n-1){
+                initial++;
+                sum += multipires_of3or5(initial, n);
+                // console.log(sum);
+            }
+            return sum;
+        }
+
+        console.log(multipires_of3or5(1, 10));
+        console.log(multipires_of3or5(1, 1000));
+    </script>
+</body>
+</html>
