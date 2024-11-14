@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function is_palindrom(number, index1, index2){
+            let number_string = number.toString();
+
+            if(index1 == index2){
+                return true;
+            }
+            let next = index1 + 1;
+            console.log(next);
+            console.log(index1);
+            if(next == index2 && number_string.charAt(index1) == number_string.charAt(index2)){
+                return true;
+            }
+            if(number_string.charAt(index1) == number_string.charAt(index2)){
+                index1++;
+                index2--;
+                return(is_palindrom(number,index1,index2));
+            }
+            return false;
+        }
+
+        function find_three_digit_factors(number){
+            let check = false;
+            let number1=0;
+            let number2=0;
+            for(let i=999; i>99; i--){
+                let factor = number/i;
+                if(Number.isInteger(factor) && factor.toString().length === 3){
+                    number1 = i;
+                    number2 = factor;
+                    check = true;
+                }
+            }
+            return {check,number1,number2};
+        }
+
+        function process(){
+            for(let i=999999; i>99999; i--){
+                if(is_palindrom(i,0,5)){
+                    if(find_three_digit_factors(i).check){
+                        let factor1 = find_three_digit_factors(i).number1;
+                        let factor2 = find_three_digit_factors(i).number2;
+                        console.log("Largest palinrom product of two three digit numbers: " + i);
+                        console.log("Factor 1: " + factor1);
+                        console.log("Factor 2: " + factor2);
+                    }
+                }
+            }
+        }
+
+        console.log(is_palindrom(6661666,0,6));
+        process();
+    </script>
+</body>
+</html>
