@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array = [3,5];
+        let newarr = [];
+        let arry = [];
+
+        function replicate(array, new_Arr, arry){
+            
+            if(array[0] < 1 ){
+                return [];
+            }
+            if(array[0] >= 1){
+                console.log(array);
+                new_Arr.push(array[1]);
+                console.log(new_Arr);
+                array[0] = array[0]-1;
+                arry = new_Arr;
+                return replicate(array, new_Arr, arry);                
+            }
+            return arry;
+        }
+
+        
+        console.log(replicate(array, newarr, arry));
+
+
+        /**
+         * using a loop
+         * **/
+
+        let arrayb = [3,5];
+        let count = arrayb[0];
+        let number = arrayb[1];
+        let new_arr = [];
+
+        for(let i = 0; i<count; i++){
+            new_arr.push(number);
+        }
+
+        console.log(new_arr);
+    </script>
+</body>
+</html>
