@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const count = [];
+
+        function getTotalIntegers(array, count){
+            array.forEach(element => {
+                if(Number.isInteger(element)){
+                    let elem = element * element;
+                    count.push(elem);
+                }else if(Array.isArray(element)){
+                    getTotalIntegers(element, count);
+                }else{
+                    // getTotalIntegers(element);
+                }
+            });
+            return count;
+        }
+
+        l = [[1,2],3]; 
+        let number_squares = getTotalIntegers(l, count);
+        let total = number_squares.reduce((acc, curr) => {
+            return acc + curr;
+        },0);
+
+        console.log(total);
+    </script>
+</body>
+</html>
